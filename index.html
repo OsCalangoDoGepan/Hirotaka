@@ -4,76 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hirotaka</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Montserrat Black', 'Montserrat Black';
-            background: url('https://images2.alphacoders.com/802/thumb-1920-802432.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: rgb(255, 255, 255);
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            visibility: hidden; /* Oculta a página até o loading terminar */
-        }
-
-        /* Animação para aparecer depois do loading */
-        .container {
-            background: rgba(194, 177, 145, 0.329);
-            padding: 20px;
-            max-width: 95%;
-            margin: auto;
-            border-radius: 10px;
-            margin-top: 20px;
-            opacity: 0;
-            animation: fadeIn 1s ease-in-out forwards;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Efeitos visuais */
-        h1 { transition: transform 0.3s ease-in-out; }
-        h1:hover { transform: scale(1.05); }
-        .bio img, .albums img {
-            width: 100%;
-            max-width: 180px;
-            border-radius: 10px;
-            margin-top: 10px;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-        .bio img:hover, .albums img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-        }
-        .social a { transition: color 0.3s ease-in-out; }
-        .social a:hover { color: #ffcc00; }
-        iframe { opacity: 0; animation: fadeIn 1.5s ease-in-out forwards; }
-
-        /* Responsividade */
-        @media (min-width: 1024px) {
-            .container { max-width: 800px; }
-            h1 { font-size: 28px; }
-        }
-    </style>
-    <script>
-        window.onload = function() {
-            setTimeout(() => {
-                document.getElementById('loading').style.display = 'none';
-                document.body.style.visibility = 'visible';
-            }, 3000); // Tempo do loading antes de exibir o site
-        };
-    </script>
 </head>
 <body>
 
     <!-- Tela de Loading -->
-    <div id="loading">
-        <div class="spinner"></div>
-        <p class="loading-text">Carregando, relaxe...</p>
+    <div id="loading-screen">
+        <h1>Carregando, relaxe...</h1>
     </div>
 
+    <!-- Conteúdo do Site -->
     <div class="container">
         <h1>Hirotaka - Músicas e Biografia</h1>
 
@@ -88,7 +29,7 @@
             </div>
         </div>
 
-        <!-- Álbuns -->
+        <!-- Álbums -->
         <h2>Álbuns</h2>
         <div class="albums">
             <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/74/c0/36/74c03667-f573-5521-4d36-540dcf172195/8447352371310.jpg/1200x1200bb.jpg" alt="Tranks">
@@ -99,13 +40,12 @@
 
         <!-- Músicas -->
         <h2>Músicas</h2>
-        <p>Ouça algumas das músicas mais populares de Hirotaka:</p>
-
-        <iframe src="https://www.youtube.com/embed/0QNr92lNMbo" title="The Past is Dead (Kako wa Shinda) - (Prod. Hirotaka)" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/JkSphLf_7CU" title="Sacred Promise - Hirotaka" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/2vtx6JVuq5baSmzBthMkMo?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
+        <iframe width="100%" height="352" src="https://www.youtube.com/embed/0QNr92lNMbo" frameborder="0" allowfullscreen></iframe>
+        <iframe width="100%" height="352" src="https://www.youtube.com/embed/JkSphLf_7CU" frameborder="0" allowfullscreen></iframe>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/2vtx6JVuq5baSmzBthMkMo?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen></iframe>
     </div>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
